@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two-Column Layout with Browser SASS</title>
+    <!-- Sass.js Library for in-browser SASS compilation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js"></script>
+    <style id="compiled-css"></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Welcome to NerdHaven</h1>
+      </header>
+
+      <div class="content">
+        <div class="column-left">
+          <h2>Left Column</h2>
+          <p>
+            This is the left column, for things like navigation or a sidebar.
+          </p>
+
+          <div class="goal-group">
+            <h3>Brush Teeth</h3>
+            <div class="checkbox-group">
+              <div class="goal-checkbox required">💪</div>
+              <div class="goal-checkbox required">💪</div>
+              <div class="goal-checkbox required">💪</div>
+              <div class="goal-checkbox bonus">👑</div>
+              <div class="goal-checkbox bonus">👑</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column-right">
+          <h2>Right Column</h2>
+          <p>This is the right column, where your main content lives.</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2024 NerdHaven</p>
+      </footer>
+    </div>
+
+    <!-- Embed SASS here -->
+    <script type="text/sass" id="sass-source">
+      $primary-color: #4e6ef2;
+      $secondary-color: #f2e5d7;
+      $font-color: #333;
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Slabo 27px", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 22pt;
+        color: #555;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: $font-color;
+      }
+
+      .container {
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      h1, h2, h3, h4 {
+        font-weight: bold;
+        color: #000;
+      }
+
+      .header, .footer {
+        text-align: left;
+        padding: 1rem;
+      }
+
+      .content {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .column-left, .column-right {
+        padding: 1rem;
+        flex: 1;
+      }
+
+      .column-left {
+      }
+
+      .goal-checkbox {
+        width: 2rem;
+        height: 2rem;
+        float: left;
+        margin: 0.25rem;
+        border-width: 2px 3px 3px 2px;
+        border-style: solid;
+        border-color: #000;
+        box-shadow: 0.06rem 0.06rem 0.0rem #000;
+        align: center;
+        vertical-align: middle;
+      }
+
+      .goal-group {
+        border: 1px solid #000;
+      }
+    </script>
+
+    <script>
+      // Compile the SASS code and inject it as CSS
+      const sassSource = document.getElementById("sass-source").textContent;
+
+      Sass.compile(sassSource, function (result) {
+        document.getElementById("compiled-css").textContent = result.text;
+      });
+    </script>
+  </body>
+</html>
