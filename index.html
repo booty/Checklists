@@ -245,9 +245,7 @@
         </div>
       </div>
 
-      <h2>Gratitude</h2>
-
-      <div class="content">
+      <div class="content page-break-before">
         <div class="column-left">
           <div class="goal-group">
             <h3>Gratitude 🙏</h3>
@@ -292,6 +290,46 @@
           </div>
         </div>
       </div>
+      <div class="content">
+        <div class="column-left">
+          <div class="goal-group">
+            <h3>Gotta-Dos ✅</h3>
+            <div class="fake-textbox">1.</div>
+            <div class="fake-textbox">2.</div>
+            <div class="fake-textbox">3.</div>
+            <div class="fake-textbox">4.</div>
+            <div class="fake-textbox">5.</div>
+          </div>
+          <div class="goal-group">
+            <h3>Wanna-Dos ✅</h3>
+            <div class="fake-textbox">1.</div>
+            <div class="fake-textbox">2.</div>
+            <div class="fake-textbox">3.</div>
+            <div class="fake-textbox">4.</div>
+            <div class="fake-textbox">5.</div>
+          </div>
+        </div>
+        <div class="column-right">
+          <div class="goal-group">
+            <h3>Achievements 🥇</h3>
+            <div class="fake-textbox">1.</div>
+            <div class="fake-textbox">2.</div>
+            <div class="fake-textbox">3.</div>
+            <div class="fake-textbox">4.</div>
+            <div class="fake-textbox">5.</div>
+            <div class="fake-textbox">6.</div>
+            <div class="fake-textbox">7.</div>
+            <div class="fake-textbox">8.</div>
+            <div class="fake-textbox">9.</div>
+            <div class="fake-textbox">10.</div>
+            <p>
+              <strong>Yo dude, for real:</strong> NOTHING is too small to list
+              here! Did you fold one single pair of socks? Achievement!!! Pet a
+              dog? Achievement!!!!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Embed SASS here -->
@@ -306,12 +344,12 @@
         padding: 0;
         font-weight: 400;
         font-style: normal;
-        font-size: 0.75rem;
         font-family: Helvetica, sans-serif;
         color: #555;
       }
 
       body {
+        font-size: 0.75rem;
         font-family: Arial, sans-serif;
         color: $font-color;
       }
@@ -361,7 +399,7 @@
 
         p, i, strong {
           clear:both;
-          font-size: 0.6rem;
+          font-size: 0.75rem;
           margin-top: 0.25rem;
         }
 
@@ -390,12 +428,14 @@
         font-size: 1.5rem; // Adjust as needed for emoji size
 
         span {
-          opacity: 0.5
+          opacity: 0.8
         }
       }
 
       .goal-checkbox.bonus {
-        opacity: 0.3;
+        opacity: 0.5;
+        border-style: dashed;
+        border-width: 1px;
       }
 
       .fake-textbox {
@@ -406,8 +446,19 @@
         background-color: #ffffff;
         margin-top: 0.25rem;
         margin-bottom: 0.25rem;
-        height: 4rem;
+        height: 2.5rem;
         padding: 0.5rem;
+      }
+
+      @media print {
+        .page-break-before {
+          page-break-before: always; /* Forces a page break before the element */
+        }
+
+        /* Optional: Use page-break-after if you want the break to occur after the element */
+        .page-break-after {
+          page-break-after: always;
+        }
       }
     </script>
 
